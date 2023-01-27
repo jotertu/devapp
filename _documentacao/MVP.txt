@@ -1,0 +1,28 @@
+MVP 01
+
+$$$ ou tempo 
+
+SCRUMM
+	- Sprint - Entrega que conseguimos fazer em Xdias 
+	- Team - time - 6 à 10 pessoas
+	- Team Leader - líder da equipe 
+	- Product Owner cuida do Backlog
+	- Product Backlog
+		- Site para controlar os seus trabalho freelance
+			1 - Front End
+			1 - Sistema sobre nós
+			- formulário de contato
+			- sistema avaliação da qualidade (depoimentos)
+			- portfólio
+			- gerador de orçamentos 
+			- emissão de contratos
+			- abertura de chamados para clientes
+			- cartão de visitas virtual
+			- cadastro de parcerias
+			- sistema de descontos
+			1 - sistema de controle de acesso
+
+
+
+- Minimun Viable Product
+	- Produto mínimo viável - entregar
