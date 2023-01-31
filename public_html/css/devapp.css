@@ -1,6 +1,59 @@
 /*folha de Estilos do DevApp*/
 
-body
-{
-    background: blue;
+:root
+    {
+        --tamanhoFonte: 16px;
+        --corFundo: white;
+    }
+    
+    *{
+        /* * - all - tudo */
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+    
+    html,
+    body
+    {
+        height: 100%;
+    }
+
+    body
+    {   
+        background-color: var(--corFundo);
+        font-size: var(--tamanhoFonte);
+    }
+
+    main,
+    section,
+    header,
+    footer
+    {
+        width: calc( 100vw - 20px);
+        display: block;
+        padding: 10px;
+        overflow: hidden;
+    }
+
+    h1,
+    h2,
+    p,
+    li,
+    a
+    {   
+        width: 100vw;
+        font-size: 1.1rem;
+        line-height: 150%;
+}
+
+/*-----------------------------
+    Formatação da index.html
+-------------------------------*/   
+
+#tela{
+    width: 98vw;
+    height: vh;
+    background: #ddd;
 }
