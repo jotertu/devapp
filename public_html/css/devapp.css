@@ -34,7 +34,7 @@
         width: calc( 100vw - 20px);
         display: block;
         padding: 10px;
-        overflow: hidden;
+        overflow: hidden; /* função do overflow hidden é esconder o que está para fora da tela*/
     }
 
     h1,
@@ -49,6 +49,13 @@
 }
 
 /*-----------------------------
+    Deixando as imagens (tag img) responsivas
+-------------------------------*/  
+img{  
+    width: 100%;
+}
+
+/*-----------------------------
     Formatação da index.html
 -------------------------------*/   
 
@@ -56,4 +63,84 @@
     width: 98vw;
     height: vh;
     background: #ddd;
+}
+
+/*-----------------------------
+Formatação da cartão de visitas.html
+-------------------------------*/   
+
+#cartao
+{
+    width: 100vw;   /*viewport width - largura da tela */
+    height: 100vh;  /*viewport height - altura da tela */
+
+    /*
+    background color: #eee;
+    background-image: #eee url(../../public_html/imagens/fundo.jpg);
+    background-repeat: no-repeat;
+    background position: center center;
+
+    */
+
+    background: #eee url(../../public_html/imagens/fundo.jpg);
+    background-size: 100%; /* cover 100% 20px */
+    background-repeat: no-repeat;
+}
+
+#cartao header figure
+{
+    width: 90vw; /* altera tamanho da imagem*/
+    height: 90vw; /* altera largura da imagem*/
+    background: rgb(134, 37, 37);;
+    border-radius: 60vw; /*Para bordas arredondadas utilizar este código com mais da metade do viewport height/width*/
+    overflow: hidden;
+    margin: 13vh auto 1rem auto;  /*margin: 10px (top/bottom) 20px (right/left) - margin: top right bottom left */ 
+    border: solid 0.35rem rgba(255,255,255,1); /* solid dashed double*/
+    box-shadow: 5px 0px 0 rgba(246,138,10,1), 5px 0 10px rgba(0, 0, 0, 0.8); /*inter/ext disthor distVer Desfoque cor*/
+    position: relative;
+    z-index: 20;
+}
+
+
+#cartao header nav 
+{
+    width: 100vw;
+    height: 35vw;
+    background: #ededed;
+    position: absolute; /*relative é na ordem natural de carregamento / remove do fluxo do documento e se posiciona independentemente - rola com o conteudo da pagina / fixed não rola com a página*/
+    top: 55vh; /*bottom*/
+    left: 0; /* right */
+    z-index: 10;
+    border-radius: 35px 35px 0 0;
+    /* box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1) ; */
+
+    display: flex;
+    flex-direction: row; /* row row-reverse column column-reverse*/
+    flex-wrap: nowrap; /*impede a quebra dos itens*/
+    justify-content: space-evenly; /* ajusta o espaçamento entre os itens*/
+    align-items: flex-end; /* posiciona na base do elemento pai*/
+}
+
+#cartao nav a
+{   
+    /*
+        no html existem tags:
+        - bloco | ficam uma embaixo da outra. (p, h1, figure, etc)
+
+        - inline: ficam um ao lado do outro sem abrir novas linhas. (a, img, etc )
+    */
+    color: #000;
+    margin: 2.5px;
+    font-size: 2em; /*1em é o tamanho da fonte do elemento pai (elemento que este está dentro)*/
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#cartao section
+{
+ position: relative;
+ z-index: 30;
+ margin-top: 5vh;
 }
