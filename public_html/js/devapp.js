@@ -1,55 +1,68 @@
+// linha de comentário
 /*
-Javascript
-Sandbox
+    JavaScript
 
-	- proteção do navegador que só executa conteudos do proprio site
-	- acesso entre sites necessita de ssl (certificado) / Https
+    sandbox
 
-Javascript é uma linguagem de programação que roda no navegador, ela consegue interagir e controlar html/css
+	- proteção do navegador que só executa conteúdos do próprio site
+	- acesso entre sites necessita de SSL / https
 
-É uma linguagem case sensetive, diferencia os caracteres maíusculos de minusculos
+	Javascript - .js - linguagem de programação de scripts que roda no navegador, ela consegue interagir e controlar html/css.
 
-linguagem padrão ecma
+	É uma linguagem case sensitive, diferencia as letras maísculos de minúsculos.
 
-O javascript não faz nada que uma linguagem server side como o php faz (acesso à bd, criar arquivos do servidor, etc). Exceto utilizando o Node.js
+    O javascript não faz nada que uma linguagem server side como o PHP faz ( acesso à BD, criar arquivos no servidor, etc ). Exceto usando o Node.js
 
-O Javascript em um arquivo .js (externo) deve ser inserido no html usando a tag <script></script>, dentro da tag script no html (interno) e dentro do html usando os disparadores como o onclick="" (inline).
+    O javascript em um arquivo .js (externo) deve ser inserido no html usando a tag <script></script>, dentro da tag script no html (interno) e dentro do elemento html usando os disparadores como o onclick="" (inline).
 
-.innerhtml ="" - Le ou escreve dentro do elemento html 
+    document.getElementById() - busca no html um elemento por seu id
+    
+    alert("Js Externo"); // abre o alerta do navegador
 
-JQUERY - é uma biblioteca de framework de JS.
-    let objeto = document.getElementById("logo") = "Novo...";
-    $("#logo").html( new text);
+    .innerHTML = "" - propriedade que lê ou escreve dentro do elemento HTML
+
+    jQuery - é uma bilioteca ou framework de Js.
+        document.getElementById("logo").innerHTML = "Novo..";
+        $("#logo").html( "Novo..");
 
 */
 
-    // alert ("js externo") // abre o alerta do navegador
+  class DevApp
+  {
 
-    let objeto = document.getElementById("logo");
-    objeto.innerHTML = "Novo texto";
+    // método construtor é executado automaticamente
+    constructor()
+    {
+        console.log("disparado automaticamente");
+    }
 
-    class DevApp{
-        //método construtor 
-        constructor()
-        {
-            console.log("disparado automaticamente");
-        }
-        /** 
-         * Método que carrega os conteúdos na home
-         * @param conteudo - string - caminho do conteudo
-         * @param onde - string id do elemento onde sera feito o carregamento */
+    /**
+     *  Método que carrega os conteúdos na home
+     *  @param conteudo - string - caminho do conteúdo
+     *  @param onde - string - id do elemento onde será feito o 
+     *  carregamento
+     * 
+     */
+    carregaConteudos( conteudo, onde )
+    {
+        // o js tem uma função chamada fetch() que permite realizar carregamentos de páginas externas
+        fetch( conteudo ).then( 
+            // recebemos a resposta da requisição em formato texto
+            response => response.text()
+        ). then(
+            html => document.querySelector( onde ).innerHTML = html
+        );
+    }
 
-        carregaConteudos( conteudo,onde ){
-        
-            // o js tem uma função chamada fetch() que permite realizar carregamentos de páginas externas
-            fetch(conteudo).then( response => response.text()). then( 
-                html => document.querySelector (onde).innerHTML = html
-            );
+  }
+
+  // objeto da classe
+  let devApp = new DevApp();
+
+  devApp.carregaConteudos( "./public_html/cartao_visitas.html", "#tela" );
+
 
     
-    }   
-}
-    //objeto da classe
-    let devApp = new DevApp();
 
-    devApp.carregaConteudos("./public_html/cartao_visitas.html","#tela");
+
+

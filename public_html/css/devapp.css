@@ -3,211 +3,212 @@
 -----------------------------------------*/
 
 /*  Podemos carregar fontes .ttf (win) .otf( win + mac + linux ) .woff .woff2 (web) */
-@font-face
-{
-    font-family: titulos;
-    src: url(../../vendor/fontes/Anton-Regular.ttf);
-}
+    @font-face
+    {
+        font-family: titulos;
+        src: url(../../vendor/fontes/Anton-Regular.ttf);
+    }
 
-@font-face 
-{
-    font-family: textos;
-    src: url(../../vendor/fontes/Quicksand-VariableFont_wght.ttf);
-}
+    @font-face 
+    {
+        font-family: textos;
+        src: url(../../vendor/fontes/Quicksand-VariableFont_wght.ttf);
+    }
 
-:root
-{
-  --tamanhoFonte: 16px;
-  --corFundo: white;
-}
+  :root
+  {
+      --tamanhoFonte: 16px;
+      --corFundo: white;
+  }
 
-*
-{
-  /* * - regra do reset - all - tudo */
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
-  box-sizing: border-box;
-}
+  *
+  {
+      /* * - regra do reset - all - tudo */
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      box-sizing: border-box;
+  }
 
-html,
-body
-{
-  height: 100%;
-}
+  html,
+  body
+  {
+      height: 100%;
+  }
 
-body
-{
-  background: var( --corFundo );
-  font-size: var( --tamanhoFonte );
-  font-family: textos;
-}
+  body
+  {
+      background: var( --corFundo );
+      font-size: var( --tamanhoFonte );
+      font-family: textos;
+  }
 
-main,
-section,
-header,
-footer
-{
-  width: calc( 100vw - 20px );
-  padding: 10px;
-  display: block;
-  overflow: hidden;
-}
+  main,
+  section,
+  header,
+  footer
+  {
+      width: calc( 100vw - 20px );
+      padding: 10px;
+      display: block;
+      overflow: hidden;
+  }
 
-h1,
-h2,
-p,
-li,
-a
-{
-  font-size: 1.1rem;
-  line-height: 150%;
-}
+  h1,
+  h2,
+  p,
+  li,
+  a
+  {
+      font-size: 1.1rem;
+      line-height: 150%;
+  }
 
-/*  deixando as img responsivas */
-img
-{ 
-width: 100%;
-}
-
-/*----------------------------------------- 
-Formatação da index.html 
------------------------------------------*/
-#tela
-{
-width: 100vw;
-height: 100vh;
-}
-
-/*----------------------------------------- 
-Formatação da cartao_visitas.html 
------------------------------------------*/
-#cartao
-{
-    width: 100vw;/* viewport width - largura da tela */
-    height: 100vh;/* viewport height - altura da tela */
-    /*
-    background-color: #eee;
-    background-image: url(../../public_html/imagens/fundo.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    */
-
-    background: #eee url(../../public_html/imagens/fundo.jpg) no-repeat center top;
-    background-size: 100%;/* cover 100% 20px */  
-}
-
-#cartao header figure
-{
-    width: 50vw;
-    height: 50vw;
-    background: rgb(138, 63, 63);
-    border-radius: 60vw;
-    overflow: hidden;
-    margin: 16vh auto 1rem auto; /* margin: 10px (top/bottom) 20px(right/left) - margin: top right bottom left - 1rem equivale ao tamanho da fonte padrão do body do navegador */
-    border: solid 0.35rem rgba( 255,255,255,1); /* solid dashed double */
-    box-shadow: 5px 0px 0 rgba( 246,138,10,1),
-                5px 0 10px rgba(0, 0, 0, 0.8);/* inset distHor distVert desfoque cor */  
-    position: relative;
-    z-index: 20;
-}
-
-#cartao nav
-{
+  /*  deixando as img responsivas */
+  img
+  { 
     width: 100%;
-    height: 22vh;
-    background: #ededed;
-    position: absolute; /* relative é na ordem natural de carregamento / remove do fluxo do documento e se posiciona independentemente - rola com o conteúdo / fixed não rola com a página */
-    top: 33vh; /* bottom */
-    left: 0; /* right */
-    z-index: 10;/* controla o empilhamento do elemento */
-    border-radius: 15px 15px 0 0; /*  esqCim dirCima dirBaix esqBaixo */
-    box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.3);
-
-    display: flex;
-    flex-direction: row;/* row row-reverse column column-reverse */
-    flex-wrap: nowrap;/* impede a quebra dos itens */
-    justify-content: space-evenly;/* ajusta o espaçamento entre os itens */
-    align-items: flex-end; /* posiciona na base do elemento pai */
-}
-
-#cartao nav a
-{
-    /*
-        no html existem tags:
-            
-        - bloco - ficam uma embaixo da outra. (p, h1, figure, etc)
-
-            - inline: ficam um ao lado do outro sem abrir novas linhas. ( a, img, etc )
-    */
-    color: #000;
-    font-size: 2.5em;/* 1em é o tamanho da fonte do elemento pai ( elemento que este está dentro )  */
-    width: 40px; 
-    height: 40px;
-    text-align: center;
-    margin-bottom: 1rem;
-}
-
-#cartao section
-{
-    position: relative;
-    z-index: 30;
-    margin-top: 1.5vh;
-}
-
-#cartao section h1,
-#cartao section h2
-{
-    font-size: 2rem;
-    text-align: center;
-    margin: 10px 0;
-    font-family: titulos;
-}
-
-#cartao section h2
-{
-    font-size: 1.2rem;
-}
-
-#cartao div
-{
-    width: 49%;
-    height: 29vh;
-    float: left;
-    overflow-y: auto;
-}
-
-#cartao section figure
-{
-    width: 49%;
-    float: right;
-}
-
-#cartao footer
-{
-    background: #333;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    color: #ffffff;
+  }
+  
+/*----------------------------------------- 
+    Formatação da index.html 
+-----------------------------------------*/
+  #tela
+  {
     width: 100vw;
-
-}
+    height: 100vh;
+  }
 
 /*----------------------------------------- 
-    Responsividade
+    Formatação da cartao_visitas.html 
 -----------------------------------------*/
+    #cartao
+    {
+        width: 100vw;/* viewport width - largura da tela */
+        height: 100vh;/* viewport height - altura da tela */
+        /*
+        background-color: #eee;
+        background-image: url(../../public_html/imagens/fundo.jpg);
+        background-repeat: no-repeat;
+        background-position: center center;
+        */
 
-/*Chama a pagina 404 caso o dispositivo exceda o width/heigth da responsividade*/
- @media ( min-width: 576px) 
+        background: #eee url(../../public_html/imagens/fundo.jpg) no-repeat center top;
+        background-size: 100%;/* cover 100% 20px */  
+    }
+
+    #cartao header figure
+    {
+        width: 50vw;
+        height: 50vw;
+        background: rgb(138, 63, 63);
+        border-radius: 60vw;
+        overflow: hidden;
+        margin: 16vh auto 1rem auto; /* margin: 10px (top/bottom) 20px(right/left) - margin: top right bottom left - 1rem equivale ao tamanho da fonte padrão do body do navegador */
+        border: solid 0.35rem rgba( 255,255,255,1); /* solid dashed double */
+        box-shadow: 5px 0px 0 rgba( 246,138,10,1),
+                    5px 0 10px rgba(0, 0, 0, 0.8);/* inset distHor distVert desfoque cor */  
+        position: relative;
+        z-index: 20;
+    }
+
+    #cartao nav
+    {
+        width: 100%;
+        height: 22vh;
+        background: #ededed;
+        position: absolute; /* relative é na ordem natural de carregamento / remove do fluxo do documento e se posiciona independentemente - rola com o conteúdo / fixed não rola com a página */
+        top: 33vh; /* bottom */
+        left: 0; /* right */
+        z-index: 10;/* controla o empilhamento do elemento */
+        border-radius: 15px 15px 0 0; /*  esqCim dirCima dirBaix esqBaixo */
+        box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.3);
+
+        display: flex;
+        flex-direction: row;/* row row-reverse column column-reverse */
+        flex-wrap: nowrap;/* impede a quebra dos itens */
+        justify-content: space-evenly;/* ajusta o espaçamento entre os itens */
+        align-items: flex-end; /* posiciona na base do elemento pai */
+    }
+
+    #cartao nav a
+    {
+        /*
+            no html existem tags:
+                
+            - bloco - ficam uma embaixo da outra. (p, h1, figure, etc)
+
+                - inline: ficam um ao lado do outro sem abrir novas linhas. ( a, img, etc )
+        */
+        color: #000;
+        font-size: 2.5em;/* 1em é o tamanho da fonte do elemento pai ( elemento que este está dentro )  */
+        width: 40px; 
+        height: 40px;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    #cartao section
+    {
+        position: relative;
+        z-index: 30;
+        margin-top: 1.5vh;
+    }
+
+    #cartao section h1,
+    #cartao section h2
+    {
+        font-size: 2rem;
+        text-align: center;
+        margin: 10px 0;
+        font-family: titulos;
+    }
+
+    #cartao section h2
+    {
+        font-size: 1.2rem;
+    }
+
+    #cartao div
+    {
+        width: 49%;
+        height: 29vh;
+        float: left;
+        overflow-y: auto;
+    }
+
+    #cartao section figure
+    {
+        width: 49%;
+        float: right;
+    }
+
+    #cartao footer
+    {
+        background: #333;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        color: #fff;
+        width: 100vw;
+    }
+
+/*----------------------------------------- 
+    Responsividade 
+-----------------------------------------*/    
+@media ( min-width: 576px )
 {
+
     body
     {
-        background: url(../../public_html/imagens/404.jpg) no-repeat center center;
+        background: url(../imagens/404.jpg) no-repeat center center;
     }
-    
+
     body > *
     {
         display: none;
     }
+    
 }
+
+

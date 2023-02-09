@@ -17,7 +17,7 @@ SCRUMM
 			- gerador de orçamentos 
 			- emissão de contratos
 			- abertura de chamados para clientes
-			- cartão de visitas virtual
+			1 - cartão de visitas virtual
 			- cadastro de parcerias
 			- sistema de descontos
 			1 - sistema de controle de acesso
@@ -26,3 +26,9 @@ SCRUMM
 
 - Minimun Viable Product
 	- Produto mínimo viável - entregar
+
+
+
+Briefing para a ONG 
+  
+  Perguntas sobre o que eles necessitam em termos de sistemas.
