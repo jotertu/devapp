@@ -2,9 +2,9 @@
 <h1>Administração dos banners</h1>
 
 <form class="container-fruid" action="./app/controls/bannersController.php" method="POST" enctype="multipart/form-data" novalidate> 
+<!--Remover sempre o ../ e manter ./ por conta da leitura do php-->
 
-
-<div class="row" > <!--Remover sempre o ../ e manter ./ por conta da leitura do php-->
+<div class="row" > 
     <div class="row">
 
     <div class="form-floating mb-3 col-md-6 m-md-3 ">
