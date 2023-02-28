@@ -41,7 +41,7 @@
       
       //instaniamos ou criamos um objeto enviando o arquivo como parametro
       $sobeArquivo = new upload($_FILES['banner01']);
-
+      var_dump($sobeArquivo);
    }
    
 ?>
