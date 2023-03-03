@@ -8,6 +8,6 @@
 
     $host="localhost";
     $banco="devappt92";
-    $usuario="root2";
+    $usuario="root";
     $senha ="";
 ?>

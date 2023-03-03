@@ -74,6 +74,7 @@
 
         private function ChecaTamanho():void
         {
+
             if($this ->arquivo['size'] <= $this -> limite)
             {   
                 $this -> GeraNomes();
