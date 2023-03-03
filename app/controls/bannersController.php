@@ -49,9 +49,9 @@
           // objeto 
           $db = new DB($host, $banco, $usuario, $senha);
          
-          $SQL = "INSERT INTO banners ( banner ) VALUES ( ? )";
+          $SQL = "INSERT INTO banners ( banner ) VALUES( ? )";
 
-          $array = array("banner0");
+          $array = array($sobeArquivo -> nome);
 
           $cadastro = $db->rodaSQL($SQL, $array);
 

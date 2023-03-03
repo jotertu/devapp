@@ -17,7 +17,7 @@
         // Listar o tipo permitido
         public $tiposPermitidos = array("jpg","jpeg","gif","png");
 
-        private $nome;
+        public $nome;
 
         // métodos da classe
         /**
