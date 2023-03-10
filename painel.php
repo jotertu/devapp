@@ -10,7 +10,11 @@ if (isset ($_GET['op']))
         case "1":
             $arquivo = "./app/banners.php";
         break;
+        case "2":
+            $arquivo = "./app/usuarios.php";
+        break;
     }
+    
     
 }
 ?>
@@ -42,6 +46,8 @@ if (isset ($_GET['op']))
     <main class="d-flex bg-light">
         <nav class="bg-dark col-12 col-md-2 p-4 p-md-2  ">
             <a class="text-decoration-none text-light col-md-12 d-block p-md-3 bg-danger" href="?op=1"><i class="bi bi-images"></i> Banners</a>
+            
+            <a class="text-decoration-none text-light col-md-12 d-block p-md-3 mt-md-2 bg-danger" href="?op=2"><i class="bi bi-people-fill"></i> Cadastro</a>
         </nav>
         <section class="col-12 col-md-10 p-4 p-md-5">
         <?php
