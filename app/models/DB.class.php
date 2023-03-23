@@ -23,18 +23,18 @@ class DB
     {  
         try
         {
-
-        
         // módulo PDO()
        $conexao = new PDO( "mysql:host=".$host.";dbname=". $banco, $usuario , $senha );
+
+        // Disponibilizando a conexão como propriedade da classe.
+        $this->conn = $conexao;
         }
+
         catch(PDOException $erro)
         {
             echo "Erro ao conectar ao banco. Erro: ". $erro->getMessage();
         }
-
-        // Disponibilizando a conexão como propriedade da classe.
-        $this->conn = $conexao;
+  
     }
 
     /**
@@ -51,14 +51,26 @@ class DB
         // execute() - protege de injeção de SQL usando os prepared statements (parâmetros preparados) -> prepare()
         $insere = $this->conn->prepare( $SQL );
 
-        var_dump($insere->execute( $array )) ;
+        $cadastro = $insere->execute( $array ) ;
 
         // Operador Ternário
-        return $insere == true ? true: false;
+        return $cadastro == true ? true: false;
     }
 
 // procura no banco
+    public function buscaDados($SQL, $array)
+    {
+        $this->conn->prepare($SQL);
 
+        $busca = $this->conn->execute($array);
+
+        //virão muitos dados
+        // o comando fetchall() - converte os dados para um objeto
+
+        $busca->fetchAll(PDO::FETCH_OBJ);
+        
+        return $busca;
+    }
 // atualiza no banco
 
 // apaga no banco
