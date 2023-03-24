@@ -15,6 +15,10 @@
             case "2" :
                 $arquivo = "./app/usuarios.php";
             break;
+
+            case "3":
+                $arquivo = "./app/fotosevideos.php";
+            break;
         }
 
         if( isset( $_GET['erro'] ) )
@@ -101,6 +105,8 @@
             <a class=" text-light text-decoration-none col-md-12 d-block p-md-3 bg-danger mt-md-2 " href="?op=1"><i class="bi bi-images"></i> Banners</a>
 
             <a class=" text-light text-decoration-none col-md-12 d-block p-md-3 bg-danger mt-md-2 " href="?op=2"><i class="bi bi-people-fill"></i> Usuários</a>
+
+            <a class=" text-light text-decoration-none col-md-12 d-block p-md-3 bg-danger mt-md-2 " href="?op=3"><i class="bi bi-people-fill"></i> Fotos e videos</a>
 
         </nav>
 

@@ -37,7 +37,7 @@
         <th scope="col">Banner</th>
         <th scope="col">Título</th>
         <th scope="col">Subtítulo</th>
-        <th scope="col"></th>
+        <th scope="col">Editar</th>
     </tr>
     <tr>
         <td class="text-center">1</td>
@@ -46,11 +46,9 @@
         <td>Subtítulo</td>
         <td>
             <a href="">
-                <i class="bi bi-pencil-square h4"></i>
-            </a>
+            <i class="bi bi-pencil-square h4 p-md-3"></i></a>
             <a href=""> 
-                <i class="bi bi-trash3 h4"></i>
-            </a>
+            <i class="bi bi-trash3 h4 p-md-3"></i></a>
         </td>
     </tr>
 </table>

@@ -60,16 +60,31 @@ class DB
 // procura no banco
     public function buscaDados($SQL, $array)
     {
-        $this->conn->prepare($SQL);
+        $roda = $this->conn->prepare($SQL);
 
-        $busca = $this->conn->execute($array);
+        $roda->execute($array);
 
         //virão muitos dados
         // o comando fetchall() - converte os dados para um objeto
 
-        $busca->fetchAll(PDO::FETCH_OBJ);
+        $resultado = $roda->fetchAll(PDO::FETCH_OBJ);
         
-        return $busca;
+        return $resultado;
+    }
+
+    public function apaga ($SQL, $array):bool
+    {
+        $roda = $this->conn->prepare($SQL);
+
+        if($roda-> execute($array) == true)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
     }
 // atualiza no banco
 

@@ -1,4 +1,48 @@
 <!-- view de administração dos banners-->
+<?php 
+
+    if(isset($_GET['edita']))
+    {
+        //faz a edição
+    }
+
+    if(isset($_GET['apaga']))
+    {
+        //faz o delete
+        require_once("./config.php");
+        require_once("./app/models/DB.class.php");
+
+        $deleta = new DB ($host, $banco, $usuario, $senha);
+
+        $SQL =" DELETE FROM usuarios WHERE idusuario = ?";
+
+        $array =array(
+            $_GET["id"]
+        );
+
+        if ($deleta->apaga($SQL, $array) == true)
+        {
+            echo '
+            <script>
+                location.href="op=2&ok;
+            </script>
+            ';
+        }
+        else
+        {
+            echo '
+            <script>
+                location.href="op=2&erro";
+            </script>
+            ';
+        }
+    }
+
+
+?>
+
+
+
 <h1>Administração de cadastros</h1>
 
 <script defer>
@@ -139,6 +183,7 @@
         <th scope="col">Usuário</th>
         <th scope="col">E-mail</th>
         <th scope="col">Endereço</th>
+        <th scope="col">Edita</th>
     </tr>
 
     <?php 
@@ -149,18 +194,36 @@
         //cria o objeto e abre automaticamente a conexão com o bd
         $busca = new DB($host, $banco, $usuario, $senha);
 
-        $SQL = "SELECT * FROM usuarios";
+        $SQL = "SELECT * FROM usuarios ORDER BY idusuario DESC";
 
         $array = array();
         
-        $busca -> buscaDados($SQL, $array)
+        $i = 1;
+
+        foreach( $resultados = $busca -> buscaDados($SQL, $array) as $res)
+        {
     ?>
 
-    <tr>
-        <td class="text-center">1</td>
-        <td></td>
-        <td>Título</td>
-        <td>Subtítulo</td>
-        <td></td>
-    </tr>
+        <tr>
+            <td class="text-center"><?php echo $i; $i++;?></td>
+            <td>
+                <?php echo $res->nome . " " . 
+                "$res->sobrenome"; ?></td>
+            <td>
+                <?php echo $res->usuario;?>
+            </td>
+            <td>
+                <?php echo $res->email; ?>
+            </td>
+
+            <td>
+            </td>
+            <td>
+                <a href="?op=2&edita&id=<?php echo $res->idusuario; ?>">
+                <i class="bi bi-pencil-square h4 p-md-3"></i></a>
+                <a href="?op=2&apaga&id=<?php echo $res->idusuario; ?>">
+                <i class="bi bi-trash3 h4 p-md-3"></i></a>
+            </td>
+        </tr>
+            <?php } ?>
 </table>
