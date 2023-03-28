@@ -9,11 +9,15 @@ require_once("./app/models/DB.class.php");
     {
         $SQL = "UPDATE usuarios SET nome = ?, sobrenome = : ?, cpf = : ?, email = : ?, usuario = : ? WHERE idusuario = ?";
 
+        $SQL = "UPDATE enderecos SET endereco = ?, cep = : ?, complemento = : ?, bairro = : ?, WHERE usuarios_idusuario = ?";
+
         $array = array($post['nome'], $_POST['sobrenome'], $_POST['cpf'], $_POST['email'], $_POST['usuario'], $_POST['usuEdita']);
+
+        $array = array($post['endereco'], $_POST['cep'], $_POST['complemento'], $_POST['bairro'], $_POST['usuEdita']);
 
         $edita = new DB ($host, $banco, $usuario, $senha);
 
-        if ($edita -> rodaSQL($SQL, $array) == true)
+        if ($edita -> rodaSQL($SQL, $array) == true && $edita->rodaSQL($SQL2, $array2))
         {
             echo '<script>location.href="?op=2&ok"</script>';
         }
@@ -33,6 +37,7 @@ require_once("./app/models/DB.class.php");
         $pegaDados = new DB ($host, $banco, $usuario, $senha);
 
         $SQL =" SELECT FROM usuarios WHERE idusuario = ?";
+        
 
         $array = array($_GET['id']);
         
@@ -49,6 +54,8 @@ require_once("./app/models/DB.class.php");
         $deleta = new DB ($host, $banco, $usuario, $senha);
 
         $SQL =" DELETE FROM usuarios WHERE idusuario = ?";
+
+        $SQL2 = "DELETE FROM enderecos WHERE usuarios_idusuario = ?";
 
         $array =array(
             $_GET["id"]
