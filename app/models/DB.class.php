@@ -86,6 +86,19 @@ class DB
         }
 
     }
+
+public function pegaUltimo():array
+{
+    $SQL ="SELECT LAST_INSERT_ID()";
+
+    $roda = $this->conn->prepare($SQL);
+    
+    $roda->execute(array());
+
+    $res = $roda->fetchAll(PDO::FETCH_ASSOC);
+
+    return $res;
+}
 // atualiza no banco
 
 // apaga no banco

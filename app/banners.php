@@ -26,7 +26,6 @@
         <label class="d-none" for="enviar">Cadastrar os Banners</label>
         <input type= "submit" name="enviar" class="btn btn-primary" value="Cadastrar os Banners" id="enviar">
     </div>
-
 </div>
 </div> 
 </form>

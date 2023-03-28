@@ -21,7 +21,7 @@
 
 
         //cadastrar no BD
-    require_once("../models/Db.class.php");
+    require_once("../models/DB.class.php");
     $insereUsuario = new DB ($host, $banco, $usuario, $senha);
 
     $SQL = "INSERT INTO usuarios (nome, sobrenome, email, senha, cpf, usuario) VALUES ( ?, ?, ?, ?, ?, ?)";
@@ -36,6 +36,7 @@
     );
 
     $executa = $insereUsuario->rodaSQL ($SQL, $valores);
+ 
 
     if ($executa == false )
     {
@@ -47,6 +48,28 @@
 
     else
     {
+        $ultimo = $insereUsuario->pegaUltimo();
+
+        $SQL2 = "INSERT INTO enderecos (endereco, numero, cep, complemento, bairro, usuarios_idusuario) valures (?, ?, ?, ?, ?, ?)";
+
+        $array2= array(
+    
+        $_POST['endereco'],
+        $_POST['numero'],
+        $_POST['cep'],
+        $_POST['complemento'],
+        $_POST['bairro'],
+        $ultimo[0]['LAST_INSERT_ID()']
+    );
+
+    if($insereUsuario->rodaSQL($SQL2, $array2) == true)
+    {
+        header("Location: ../../painel.php?op=2&erro");
+    }
+    else
+    {
         header("Location: ../../painel.php?op=2&ok");
     }
+
+    } 
 ?>

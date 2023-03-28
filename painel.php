@@ -17,7 +17,7 @@
             break;
 
             case "3":
-                $arquivo = "./app/fotosevideos.php";
+                $arquivo = "./app/publicacoes.php";
             break;
         }
 
@@ -74,7 +74,7 @@
 
     <link rel="stylesheet" href="./vendor/bootstrap-5.0.2-dist/css/bootstrap.min.css">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" q integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
 
     <script src="./vendor/bootstrap-5.0.2-dist/js/bootstrap.min.js" defer ></script>
 
@@ -106,7 +106,7 @@
 
             <a class=" text-light text-decoration-none col-md-12 d-block p-md-3 bg-danger mt-md-2 " href="?op=2"><i class="bi bi-people-fill"></i> Usuários</a>
 
-            <a class=" text-light text-decoration-none col-md-12 d-block p-md-3 bg-danger mt-md-2 " href="?op=3"><i class="bi bi-people-fill"></i> Fotos e videos</a>
+            <a class=" text-light text-decoration-none col-md-12 d-block p-md-3 bg-danger mt-md-2 " href="?op=3"><i class="bi bi-file-earmark-plus"></i> Publicações de Noticias</a>
 
         </nav>
 
