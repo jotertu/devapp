@@ -171,12 +171,12 @@ require_once("./app/models/DB.class.php");
     </div>
 
     <div class="form-floating col-md-3 m-md-0 mt-md-3 ">
-    <input type="e-mail" class="form-control" id="email" name="email" placeholder="Seu e-mail" maxlength="77" minlength="20" required value="<?php echo @$dado[0]->email; ?>" >
+    <input type="e-mail" class="form-control" id="email" name="email" placeholder="Seu e-mail" maxlength="77" minlength="10" required value="<?php echo @$dado[0]->email; ?>" >
     <label for="Seu e-mail">Seu E-mail</label>
     </div>
 
     <div class="form-floating col-md-3 m-md-0 mt-md-3 ">
-    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Seu usuário" maxlength="77" minlength="20" required value="<?php echo @$dado[0]->usuario; ?>" >
+    <input type="text" class="form-control" id="usuario" name="usuario" placeholder="Seu usuário" maxlength="77" minlength="2" required value="<?php echo @$dado[0]->usuario; ?>" >
     <label for="Seu usuário">Seu Usuário</label>
     </div>
 

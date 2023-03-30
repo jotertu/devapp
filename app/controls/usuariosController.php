@@ -26,11 +26,13 @@
 
     $SQL = "INSERT INTO usuarios (nome, sobrenome, email, senha, cpf, usuario) VALUES ( ?, ?, ?, ?, ?, ?)";
 
+    $pas2 = $insereUsuario -> criptografaDados ($pas); 
+
     $valores = array(
         $nome, 
         $sobrenome, 
         $email, 
-        $pas, 
+        $pas2,
         $cpf, 
         $user
     );

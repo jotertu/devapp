@@ -99,6 +99,33 @@ public function pegaUltimo():array
 
     return $res;
 }
+
+public function criptografaDados($texto):string
+{
+    // md5() - criptografia em md5 hash não descriptogtafa
+
+    // base64_encode($texto) - criptografa em base 64 e ele pode ser descriptografado facilmente ( base64_decode ($texto))
+
+    // crypt($texto, $chave) - Criptografa usando uma chave personalizada / para compara usando crypt ($texto, $chave) == textoNoBancoDeDados
+
+    //return md5($texto);  // existem muitos dicionários de senhas / valorDoBD == MD5("$_post['senha']")
+
+    //return base64_encode ($texto); base64_decode(ValorDoBD) == $_POST['senha']
+
+    //openssl é o modo mais novo e seguro
+
+    //return crypt($texto, '$en@c'); //Não permite descriptografar a senha / crypt ($_POST['senha'], '$en@c') == valorDoBD
+
+    $cipher ="aes-128-gcm"; // tamanho do hash
+    $iv = openssl_cipher_iv_length($cipher); // string aleatoria utilizada para criar chave pública
+    $ivRandom = openssl_random_pseudo_bytes($iv);
+
+    $chave = '$en@c';
+
+    $textoCriptografado = openssl_encrypt($texto, $cipher, $chave, $opcoes=0, $iv, $ivRandom);
+
+    return $textoCriptografado;
+}
 // atualiza no banco
 
 // apaga no banco

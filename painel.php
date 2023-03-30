@@ -1,5 +1,5 @@
 <?php
-
+    require_once("./protege.php");
     // Montar um switch/case que pegue a variável op que está na url e quando seu valor for 1 carregue a página banners.php dentro da section
 
     // checamos se a variável GET(url) existe
@@ -14,6 +14,10 @@
 
             case "2" :
                 $arquivo = "./app/usuarios.php";
+            break;
+            
+            case "0" :
+                $arquivo = "./app/login.php";
             break;
 
             case "3":
@@ -107,7 +111,10 @@
             <a class=" text-light text-decoration-none col-md-12 d-block p-md-3 bg-danger mt-md-2 " href="?op=2"><i class="bi bi-people-fill"></i> Usuários</a>
 
             <a class=" text-light text-decoration-none col-md-12 d-block p-md-3 bg-danger mt-md-2 " href="?op=3"><i class="bi bi-file-earmark-plus"></i> Publicações de Noticias</a>
-
+            
+            <?php if(isset($_SESSION['logado']) ){ ?>
+            <a class=" text-light text-decoration-none col-md-12 d-block p-md-3 bg-danger mt-md-2 " href="./logout.php"><i class="bi bi-box-arrow-right"></i> Sair</a>
+            <?php } ?>    
         </nav>
 
         <section class=" col-12 col-md-10 p-md-4">
