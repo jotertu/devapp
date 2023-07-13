@@ -19,14 +19,13 @@
 
     <div class="col-md-6 m-md-3">
         <label for="banner01" class="form-label d-none">Banner 01</label>
-        <input class="form-control form-control-" id="banner01" name="banner01" type="file">
+        <input class="form-control form-control-" id="banner01" name="banner01" type="file" accept="image/png, image/jpg, image/gif, image/jpeg">
     </div>
 
     <div class="m-md-3">
         <label class="d-none" for="enviar">Cadastrar os Banners</label>
         <input type= "submit" name="enviar" class="btn btn-primary" value="Cadastrar os Banners" id="enviar">
     </div>
-
 </div>
 </div> 
 </form>
@@ -37,7 +36,7 @@
         <th scope="col">Banner</th>
         <th scope="col">Título</th>
         <th scope="col">Subtítulo</th>
-        <th scope="col"></th>
+        <th scope="col">Editar</th>
     </tr>
     <tr>
         <td class="text-center">1</td>
@@ -46,11 +45,9 @@
         <td>Subtítulo</td>
         <td>
             <a href="">
-                <i class="bi bi-pencil-square h4"></i>
-            </a>
+            <i class="bi bi-pencil-square h4 p-md-3"></i></a>
             <a href=""> 
-                <i class="bi bi-trash3 h4"></i>
-            </a>
+            <i class="bi bi-trash3 h4 p-md-3"></i></a>
         </td>
     </tr>
 </table>

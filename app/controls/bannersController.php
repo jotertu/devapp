@@ -41,7 +41,28 @@
       
       //instaniamos ou criamos um objeto enviando o arquivo como parametro
       $sobeArquivo = new upload($_FILES['banner01']);
-      var_dump($sobeArquivo);
+
+      if($sobeArquivo)
+      {
+          require_once("../models/DB.class.php");
+
+          // objeto 
+          $db = new DB($host, $banco, $usuario, $senha);
+         
+          $SQL = "INSERT INTO banners ( banner ) VALUES( ? )";
+
+          $array = array($sobeArquivo -> nome);
+
+          $cadastro = $db->rodaSQL($SQL, $array);
+
+         
+
+          if($cadastro == false)
+          {
+            echo "Erro ao inserir no banco de dados";
+          }
+          
+      }
    }
 
    /*if( empty($_FILES['banner01'] && $_FILES['banner01']['size'] != "")
