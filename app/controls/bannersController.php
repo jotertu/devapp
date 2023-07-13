@@ -32,7 +32,7 @@
    }
 
    // A controller faz a chamada para o Model//
-   if( !empty($_FILES['banner01']) && $_FILES['banner01']['tmp_name'] != "")
+   if( empty($_FILES['banner01']) && $_FILES['banner01']['tmp_name'] != "")
    {
       // Chamar o model
       // 1 º Upload de imagem
@@ -43,5 +43,13 @@
       $sobeArquivo = new upload($_FILES['banner01']);
       var_dump($sobeArquivo);
    }
-   
+
+   /*if( empty($_FILES['banner01'] && $_FILES['banner01']['size'] != "")
+   {
+      require_once("../models/upload.class.php")
+
+      $
+   }
+
+   )*/
 ?>

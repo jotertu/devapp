@@ -66,11 +66,15 @@
            
         }
 
+<<<<<<< Updated upstream
         // checar o tamanho do arquivo enviado mb
         // dica util, caso quiser saber o tamanho do arquivo em mb, é necessário o dividir por 1024 duas vezes
         // caso queira saber o tamanho do arquivo em bites, multiplicalo 
         // para o debug echo $this ->arquivo['size'] / 1024 / 1024; dentro da function checatamanho, ira trazer o valor em mb do arquivo
         
+=======
+            // checar o tamanho do arquivo enviado mb
+>>>>>>> Stashed changes
 
         private function ChecaTamanho():void
         {
@@ -83,6 +87,10 @@
                 $this -> MostraTexto('Arquivo maior que o permitido', 1);
             }
             
+<<<<<<< Updated upstream
+=======
+            $tamanho = round($);
+>>>>>>> Stashed changes
 
         }
 
@@ -105,7 +113,15 @@
             // operador de atribuição e concatena, junta os valores armazenados com o novo valor
             $nome .= rand(1,100000);
 
+<<<<<<< Updated upstream
             $nome .= "_imagemBanner";
+=======
+        // padronizar o nome dos arquivos enviados
+        
+        
+
+        
+>>>>>>> Stashed changes
 
             $nomeOriginal = pathinfo($this->arquivo['name'], PATHINFO_FILENAME);
 
